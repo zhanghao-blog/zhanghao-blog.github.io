@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2016/08/21/hello-world/</loc>
+    <lastmod>2016-08-28T06:26:57.132Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-08-21T04:15:40.832Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2016/08/22/%E5%BC%A0%E6%B5%A9%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2016-08-26T12:20:16.459Z</lastmod>
+    <data>
+        <display>
+        <title>快速入门</title>
+        <pubTime>2016-08-22T07:40:25.000Z</pubTime>
+        
+        <tag>MarkDown</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术栈" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/08/23/postName/</loc>
+    <lastmod>2016-08-26T03:10:36.426Z</lastmod>
+    <data>
+        <display>
+        <title>创作之路</title>
+        <pubTime>2016-08-23T02:32:53.000Z</pubTime>
+        
+        <tag>瞎创作</tag>
+         
+        <tag>生活</tag>
+         
+         
+           
+             
+              <breadCrumb title="写作、创作" url="http://yoursite.com/categories/%E5%86%99%E4%BD%9C%E3%80%81%E5%88%9B%E4%BD%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+</urlset>
