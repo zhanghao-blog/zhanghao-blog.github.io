@@ -2,23 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://zhanghao-blog.github.io/2016/08/21/hello-world/</loc>
+    <loc>http://yoursite.com/2016/08/29/reading/</loc>
+    
+    <lastmod>2016-08-30T11:21:50.457Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2016-08-30T01:34:51.476Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2016-08-30T01:26:33.403Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/google1baeb7d44ba3bd69.html</loc>
+    
+    <lastmod>2016-08-28T07:37:18.639Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/baidu_verify_lR4CEcynWj.html</loc>
+    
+    <lastmod>2016-08-28T07:21:40.640Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/08/21/hello-world/</loc>
+    
     <lastmod>2016-08-28T06:26:57.132Z</lastmod>
     
-    </url>
-
-    
-    
+  </url>
+  
   <url>
-    <loc>http://zhanghao-blog.github.io/2016/08/22/%E5%BC%A0%E6%B5%A9%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2016-08-28T06:24:13.722Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/08/22/%E5%BC%A0%E6%B5%A9%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
+    
     <lastmod>2016-08-26T12:20:16.459Z</lastmod>
     
-    </url>
-
-    
+  </url>
+  
   <url>
-    <loc>http://zhanghao-blog.github.io/2016/08/23/postName/</loc>
+    <loc>http://yoursite.com/2016/08/23/postName/</loc>
+    
     <lastmod>2016-08-26T03:10:36.426Z</lastmod>
-
-    </url>
+    
+  </url>
+  
 </urlset>
