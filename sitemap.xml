@@ -2,16 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/guestbook/index.html</loc>
-    
-    <lastmod>2016-08-31T09:09:13.102Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/08/23/postName/</loc>
     
-    <lastmod>2016-08-31T08:42:58.666Z</lastmod>
+    <lastmod>2016-08-31T09:20:21.861Z</lastmod>
     
   </url>
   
@@ -26,13 +19,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2016-08-30T01:34:51.476Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2016-08-30T01:26:33.403Z</lastmod>
     
   </url>
   
