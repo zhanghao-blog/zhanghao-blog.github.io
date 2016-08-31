@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/08/23/postName/</loc>
+    
+    <lastmod>2016-08-31T08:42:58.666Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/guestbook/index.html</loc>
+    
+    <lastmod>2016-08-31T08:40:42.891Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/29/reading/</loc>
     
     <lastmod>2016-08-31T04:08:02.676Z</lastmod>
@@ -54,13 +68,6 @@
     <loc>http://yoursite.com/2016/08/22/%E5%BC%A0%E6%B5%A9%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2016-08-26T12:20:16.459Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/08/23/postName/</loc>
-    
-    <lastmod>2016-08-26T03:10:36.426Z</lastmod>
     
   </url>
   
