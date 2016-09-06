@@ -1,3 +1,5 @@
+layout: false
+---
 <?php 
 $urls = array(
     'http://www.example.com/1.html',
