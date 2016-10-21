@@ -4,8 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/21/%E5%86%85%E5%AE%B9%E5%88%86%E4%BA%AB%E4%B8%93%E9%A2%98/</loc>
+    <lastmod>2016-10-21T09:05:36.908Z</lastmod>
+    <data>
+        <display>
+        <title>内容分享专题</title>
+        <pubTime>2016-10-21T07:05:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="专题|&amp;emsp;&lt;i class=&quot;fa fa-thumb-tack &quot;&gt;&lt;/i&gt;" url="http://yoursite.com/categories/%E4%B8%93%E9%A2%98-emsp-i-class-fa-fa-thumb-tack-i/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/09/23/%E5%A6%82%E4%BD%95%E8%81%AA%E6%98%8E%E7%9A%84%E6%8F%90%E9%97%AE/</loc>
-    <lastmod>2016-10-21T08:40:03.913Z</lastmod>
+    <lastmod>2016-10-21T08:51:18.436Z</lastmod>
     <data>
         <display>
         <title>如何聪明的提问</title>
@@ -17,24 +35,6 @@
            
              
               <breadCrumb title="技术栈" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/21/%E5%86%85%E5%AE%B9%E5%88%86%E4%BA%AB%E4%B8%93%E9%A2%98/</loc>
-    <lastmod>2016-10-21T08:28:16.702Z</lastmod>
-    <data>
-        <display>
-        <title>内容分享专题</title>
-        <pubTime>2016-10-21T07:05:59.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="专题|&amp;emsp;&lt;i class=&quot;fa fa-thumb-tack &quot;&gt;&lt;/i&gt;" url="http://yoursite.com/categories/%E4%B8%93%E9%A2%98-emsp-i-class-fa-fa-thumb-tack-i/"/>
           
         </display>
     </data>
