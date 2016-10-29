@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/10/21/%E5%86%85%E5%AE%B9%E5%88%86%E4%BA%AB%E4%B8%93%E9%A2%98/</loc>
+    
+    <lastmod>2016-10-29T07:35:19.415Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/10/29/ruby-on-rails-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80/</loc>
     
-    <lastmod>2016-10-29T03:58:17.022Z</lastmod>
+    <lastmod>2016-10-29T07:05:59.677Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2016/10/06/%E4%B8%A4%E6%9C%AC%E4%B9%A6%E4%B8%80%E9%83%A8%E5%BD%B1/</loc>
     
     <lastmod>2016-10-24T13:02:55.883Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/21/%E5%86%85%E5%AE%B9%E5%88%86%E4%BA%AB%E4%B8%93%E9%A2%98/</loc>
-    
-    <lastmod>2016-10-22T03:18:09.010Z</lastmod>
     
   </url>
   
