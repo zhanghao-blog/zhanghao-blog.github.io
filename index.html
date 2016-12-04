@@ -96,15 +96,15 @@
 
 
 
-<meta name="description" content="收得下过去 也给的了未来">
+<meta name="description" content="魔幻与现实常驻常驻相交点">
 <meta property="og:type" content="website">
 <meta property="og:title" content="张浩's blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="张浩's blog">
-<meta property="og:description" content="收得下过去 也给的了未来">
+<meta property="og:description" content="魔幻与现实常驻常驻相交点">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="张浩's blog">
-<meta name="twitter:description" content="收得下过去 也给的了未来">
+<meta name="twitter:description" content="魔幻与现实常驻常驻相交点">
 
 
 
@@ -194,6 +194,8 @@ var _hmt = _hmt || [];
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
             首页
           </a>
         </li>
@@ -201,6 +203,8 @@ var _hmt = _hmt || [];
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -210,6 +214,8 @@ var _hmt = _hmt || [];
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
             标签
           </a>
         </li>
@@ -217,6 +223,8 @@ var _hmt = _hmt || [];
         
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -371,6 +379,169 @@ var _hmt = _hmt || [];
               阅读全文 &raquo;
             </a>
           </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/25/rails-CRUD-应用程式/" itemprop="url">
+                  rails CRUD 应用程式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-25T09:28:50+08:00" content="2016-11-25">
+              2016-11-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/25/rails-CRUD-应用程式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/25/rails-CRUD-应用程式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+		  
+          
+          
+             <span id="/2016/11/25/rails-CRUD-应用程式/" class="leancloud_visitors" data-flag-title="rails CRUD 应用程式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Rails的MVC元件"><a href="#Rails的MVC元件" class="headerlink" title="Rails的MVC元件"></a>Rails的MVC元件</h2><ul>
+<li>ActiveRecord是Rails的Model元件</li>
+<li>ActionPack包含了ActionDispatch、ActionController和ActionView，分别是Rails的Routing、Controller和View元件</li>
+</ul>
+<ol>
+<li>浏览器发出HTTP request请求给Rails</li>
+<li>路由(Routing)根据规则决定派往哪一个Controller的Action</li>
+<li>负责处理的Controller Action操作Model资料</li>
+<li>Model存取数据库或资料处理</li>
+<li>Controller Action将得到的资料餵给View样板</li>
+<li>回传最后的HTML成品给浏览器</li>
+</ol>
+<h2 id="ActiveRecord操作数据库"><a href="#ActiveRecord操作数据库" class="headerlink" title="ActiveRecord操作数据库"></a>ActiveRecord操作数据库</h2><p>ActiveRecord是Rails的ORM(Object-relational mapping)元件，负责与数据库沟通，让你可以使用物件导向语法来操作关联式数据库，它的对应概念如下：</p>
+<ul>
+<li>将数据库表格(table)对应到一个类别(class)</li>
+<li>类别方法就是操作这个表格(table)，例如新增资料、多笔资料更新或多笔资料删除</li>
+<li>资料表中的一笔资料(row)对应到一个物件(object)</li>
+<li>物件方法就是操作这笔资料，例如更新或删除这笔资料</li>
+<li>资料表的字段(column)就是物件的属性(object attribute)</li>
+</ul>
+<h3 id="使用Rails的generator功能来分别产生Model和Controller档案"><a href="#使用Rails的generator功能来分别产生Model和Controller档案" class="headerlink" title="使用Rails的generator功能来分别产生Model和Controller档案"></a>使用Rails的generator功能来分别产生Model和Controller档案</h3><blockquote>
+<p>这些指令必须要在Rails专案目录下执行</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rails g model event name:string description:text is_public:boolean capacity:integer</div><div class="line">$ bin/rake db:migrate</div></pre></td></tr></table></figure>
+<p>接着，使用rails console(可以简写为rails c) 进入主控台模式做练习：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"># 新增</div><div class="line">&gt; event = Event.new</div><div class="line">&gt; event.name = &quot;Ruby course&quot;</div><div class="line">&gt; event.description = &quot;fooobarrr&quot;</div><div class="line">&gt; event.capacity = 20</div><div class="line">&gt; event.save # 储存进数据库，读者可以观察另一个指令视窗</div><div class="line">&gt; event.id # 输出主键 1，在 Rails 中的主键皆为自动递增的整数 ID</div><div class="line"></div><div class="line">&gt; event = Event.new( :name =&gt; &quot;another ruby course&quot;, :capacity =&gt; 30)</div><div class="line">&gt; event.save</div><div class="line">&gt; event.id # 输出主键 2，这是第二笔资料</div><div class="line"></div><div class="line"># 查询</div><div class="line">&gt; event = Event.where( :capacity =&gt; 20 ).first</div><div class="line">&gt; events = Event.where( [&quot;capacity &gt;= ?&quot;, 20 ] ).limit(3).order(&quot;id desc&quot;)</div><div class="line"></div><div class="line"># 更新</div><div class="line">&gt; e = Event.find(1) # 找到主键为 1 的资料</div><div class="line">&gt; e.name # 输出 Ruby course</div><div class="line">&gt; e.update( :name =&gt; &apos;abc&apos;, :is_public =&gt; false )</div><div class="line"></div><div class="line"># 删除</div><div class="line">&gt; e.destroy</div></pre></td></tr></table></figure>
+<h2 id="Migration建立资料表"><a href="#Migration建立资料表" class="headerlink" title="Migration建立资料表"></a>Migration建立资料表</h2><p>Rails使用了Migration数据库迁移机制来定义数据库结构(Schema)，档案位于db/migrate/目录下。它的目的在于:</p>
+<ul>
+<li>让数据库的修改也可以纳入版本控制系统，所有的变更都透过撰写Migration档案执行</li>
+<li>方便应用程式更新升级，例如让软件从第三版更新到第五版，数据库更新只需要执行rake db:migrate</li>
+<li>跨数据库通用，不需修改程式就可以用在SQLite3、MySQL、Postgres等不同数据库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#db/migrate/20161125011631_create_events.rb</div><div class="line">class CreateEvents &lt; ActiveRecord::Migration[5.0]</div><div class="line">  def change</div><div class="line">    create_table :events do |t|</div><div class="line">      t.string :name</div><div class="line">      t.text :description</div><div class="line">      t.boolean :is_public</div><div class="line">      t.integer :capacity</div><div class="line"></div><div class="line">      t.timestamps</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>Migration档案不需要和Model一一对应，像我们来新增一个Migration档案来新增一个数据库字段</p>
+<blockquote>
+<p>$ rails g migration add_status_to_events</p>
+</blockquote>
+<p>编辑这个Migration档案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def change</div><div class="line">   add_column :events, :status, :string</div><div class="line"> end</div></pre></td></tr></table></figure></p>
+<p>接着执行bin/rake db:migrate就会在events表格中新增一个status的字段，字段型别是string。Rails会记录你已经对数据库操作过哪些Migrations，像此例中就只会跑这个Migration而已，就算你多执行几次bin/rake db:migrate也只会对数据库操作一次。</p>
+<h2 id="ActiveRecord资料验证-Validation"><a href="#ActiveRecord资料验证-Validation" class="headerlink" title="ActiveRecord资料验证(Validation)"></a>ActiveRecord资料验证(Validation)</h2><p>编辑app/models/event.rb加入</p>
+<blockquote>
+<p>class Event &lt; ActiveRecord::Base<br>validates_presence_of :name<br>end</p>
+</blockquote>
+<p>其中的validates_presence_of宣告了name这个属性是必填。我们按Ctrl+Z离开主控台重新进入，或是输入 reload!，这样才会重新加载</p>
+<h2 id="基本的CRUD应用程式"><a href="#基本的CRUD应用程式" class="headerlink" title="基本的CRUD应用程式"></a>基本的CRUD应用程式</h2><p>有了Event model，接下来实作出完整的CRUD使用者接口流程，这包含了列表页面、新增页面、编辑页面以及个别资料页面。</p>
+<h3 id="外卡路由"><a href="#外卡路由" class="headerlink" title="外卡路由"></a>外卡路由</h3><p>编辑config/routes.rb在最后插入一行：</p>
+<blockquote>
+<p> match ‘:controller(/:action(/:id(.:format)))’, :via =&gt; :all</p>
+</blockquote>
+<h3 id="列出所有资料"><a href="#列出所有资料" class="headerlink" title="列出所有资料"></a>列出所有资料</h3><p>Rails的generator功能来产生controller <code>rails g controller events</code></p>
+<blockquote>
+<p>在Rails会让Action里的实例变量(也就是有@开头的变量)通通传到View样板里面可以使用。</p>
+</blockquote>
+
+          
         
       
     </div>
@@ -889,129 +1060,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/06/两本书一部影/" itemprop="url">
-                  两本书一部电影
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-06T21:54:11+08:00" content="2016-10-06">
-              2016-10-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-
-          
-
-		  
-          
-          
-             <span id="/2016/10/06/两本书一部影/" class="leancloud_visitors" data-flag-title="两本书一部电影">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>前面说是要写些关于电影的，现在看来影评写来不是那么容易，当真得去写又感觉写不了什么深刻的东西。但是毕竟看过了，还是试着去留下点东西，总是会不经意去回顾那些以前写下记下的东西，满满的是回忆？并不是而是不成熟，但这就算是成长吧，在原地乱转同时又心怀太阳。最近一个月来一直留着胡子，这样可以更成熟样子，当然同时也是可以自我欺骗，因为这样一来如果小孩子喊你叔叔，就可以假装这只是因为我留着胡子，对的肯定是这样，我很年轻。正题，喜欢三毛也喜欢毛姆，看了《月亮和六便士》和《撒哈拉的故事》，又重看了铁坦尼克号。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/06/两本书一部影/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1052,12 +1100,12 @@ var _hmt = _hmt || [];
                src="http://ocb1t53ct.bkt.clouddn.com/avatar.jpg"
                alt="zhanghao" />
           <p class="site-author-name" itemprop="name">zhanghao</p>
-          <p class="site-description motion-element" itemprop="description">收得下过去 也给的了未来</p>
+          <p class="site-description motion-element" itemprop="description">魔幻与现实常驻常驻相交点</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
