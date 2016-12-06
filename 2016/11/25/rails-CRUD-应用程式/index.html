@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, zhanghao-blog" />
+  <meta name="keywords" content="rails," />
 
 
 
@@ -116,7 +116,7 @@ ActionPack包含了ActionDispatch、ActionController和ActionView，分别是Rai
 浏览器发出HTTP request请求给Rails
 路由(Routing)根据规则决定派往哪一个Controller的Action
 负责">
-<meta property="og:updated_time" content="2016-11-25T02:06:00.766Z">
+<meta property="og:updated_time" content="2016-12-04T13:08:27.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rails CRUD 应用程式">
 <meta name="twitter:description" content="Rails的MVC元件
@@ -307,16 +307,26 @@ var _hmt = _hmt || [];
           </span>
 
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/25/rails-CRUD-应用程式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/25/rails-CRUD-应用程式/" itemprop="commentsCount"></span>
-                </a>
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
               </span>
-            
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术栈/" itemprop="url" rel="index">
+                    <span itemprop="name">技术栈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
           
 
           
@@ -358,6 +368,7 @@ var _hmt = _hmt || [];
 <li>Controller Action将得到的资料餵给View样板</li>
 <li>回传最后的HTML成品给浏览器</li>
 </ol>
+<a id="more"></a>
 <h2 id="ActiveRecord操作数据库"><a href="#ActiveRecord操作数据库" class="headerlink" title="ActiveRecord操作数据库"></a>ActiveRecord操作数据库</h2><p>ActiveRecord是Rails的ORM(Object-relational mapping)元件，负责与数据库沟通，让你可以使用物件导向语法来操作关联式数据库，它的对应概念如下：</p>
 <ul>
 <li>将数据库表格(table)对应到一个类别(class)</li>
@@ -399,6 +410,8 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>在Rails会让Action里的实例变量(也就是有@开头的变量)通通传到View样板里面可以使用。</p>
 </blockquote>
+<h2 id="RESTful-应用程式"><a href="#RESTful-应用程式" class="headerlink" title="RESTful 应用程式"></a>RESTful 应用程式</h2><p>REST有主要有两个核心精神：1. 使用Resource来当做识别的资源，也就是使用一个URL网址来代表一个Resource 2. 同一个Resource则可以有不同的Representations格式变化。这一章的路由实作了Resource概念，而Representation则是用了respond_to方法来实作，稍候我们也会介绍如何使用。</p>
+<p>RESTful带给Rails最大的好处是：它帮助我们用一种比较标准化的方式来命名跟组织Controllers和Actions</p>
 
       
     </div>
@@ -440,6 +453,12 @@ var _hmt = _hmt || [];
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/rails/" rel="tag">#rails</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
@@ -452,6 +471,10 @@ var _hmt = _hmt || [];
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/06/关于外文检索/" rel="prev" title="关于外文检索">
+                关于外文检索 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -475,14 +498,6 @@ var _hmt = _hmt || [];
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/11/25/rails-CRUD-应用程式/"
-           data-title="rails CRUD 应用程式" data-url="http://yoursite.com/2016/11/25/rails-CRUD-应用程式/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -518,12 +533,12 @@ var _hmt = _hmt || [];
                src="http://ocb1t53ct.bkt.clouddn.com/avatar.jpg"
                alt="zhanghao" />
           <p class="site-author-name" itemprop="name">zhanghao</p>
-          <p class="site-description motion-element" itemprop="description">魔幻与现实常驻常驻相交点</p>
+          <p class="site-description motion-element" itemprop="description">安静</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -540,7 +555,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -569,7 +584,7 @@ var _hmt = _hmt || [];
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rails的MVC元件"><span class="nav-text">Rails的MVC元件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActiveRecord操作数据库"><span class="nav-text">ActiveRecord操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Rails的generator功能来分别产生Model和Controller档案"><span class="nav-text">使用Rails的generator功能来分别产生Model和Controller档案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Migration建立资料表"><span class="nav-text">Migration建立资料表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActiveRecord资料验证-Validation"><span class="nav-text">ActiveRecord资料验证(Validation)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本的CRUD应用程式"><span class="nav-text">基本的CRUD应用程式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外卡路由"><span class="nav-text">外卡路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出所有资料"><span class="nav-text">列出所有资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rails的MVC元件"><span class="nav-text">Rails的MVC元件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActiveRecord操作数据库"><span class="nav-text">ActiveRecord操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Rails的generator功能来分别产生Model和Controller档案"><span class="nav-text">使用Rails的generator功能来分别产生Model和Controller档案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Migration建立资料表"><span class="nav-text">Migration建立资料表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActiveRecord资料验证-Validation"><span class="nav-text">ActiveRecord资料验证(Validation)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本的CRUD应用程式"><span class="nav-text">基本的CRUD应用程式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外卡路由"><span class="nav-text">外卡路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出所有资料"><span class="nav-text">列出所有资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTful-应用程式"><span class="nav-text">RESTful 应用程式</span></a></li></ol></div>
             
           </div>
         </section>
