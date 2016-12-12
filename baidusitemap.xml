@@ -5,14 +5,57 @@
     
   <url>
     <loc>http://yoursite.com/2016/12/06/%E5%85%B3%E4%BA%8E%E5%A4%96%E6%96%87%E6%A3%80%E7%B4%A2/</loc>
-    <lastmod>2016-12-06T10:31:55.279Z</lastmod>
+    <lastmod>2016-12-12T01:06:39.114Z</lastmod>
     <data>
         <display>
         <title>关于外文检索</title>
         <pubTime>2016-12-06T10:31:55.000Z</pubTime>
         
+        <tag>英语外文</tag>
+         
          
            
+             
+              <breadCrumb title="学习管理" url="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/21/%E5%86%85%E5%AE%B9%E5%88%86%E4%BA%AB%E4%B8%93%E9%A2%98/</loc>
+    <lastmod>2016-12-12T01:00:43.754Z</lastmod>
+    <data>
+        <display>
+        <title>内容分享专题</title>
+        <pubTime>2016-10-21T07:05:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="专题&amp;emsp;|&amp;emsp;&lt;i class=&quot;fa fa-thumb-tack &quot;&gt;&lt;/i&gt;" url="http://yoursite.com/categories/%E4%B8%93%E9%A2%98-emsp-emsp-i-class-fa-fa-thumb-tack-i/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/09/%E3%80%8A%E8%AE%A4%E7%9F%A5%E4%B8%8E%E8%AE%BE%E8%AE%A1%E3%80%8B/</loc>
+    <lastmod>2016-12-09T02:29:59.776Z</lastmod>
+    <data>
+        <display>
+        <title>《认知与设计》</title>
+        <pubTime>2016-12-09T02:14:16.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
         </display>
     </data>
     </url>
@@ -112,24 +155,6 @@
            
              
               <breadCrumb title="技术栈" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/21/%E5%86%85%E5%AE%B9%E5%88%86%E4%BA%AB%E4%B8%93%E9%A2%98/</loc>
-    <lastmod>2016-10-29T07:35:19.415Z</lastmod>
-    <data>
-        <display>
-        <title>内容分享专题</title>
-        <pubTime>2016-10-21T07:05:59.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="专题&amp;emsp;|&amp;emsp;&lt;i class=&quot;fa fa-thumb-tack &quot;&gt;&lt;/i&gt;" url="http://yoursite.com/categories/%E4%B8%93%E9%A2%98-emsp-emsp-i-class-fa-fa-thumb-tack-i/"/>
           
         </display>
     </data>
