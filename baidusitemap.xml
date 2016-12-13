@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/12/09/%E3%80%8A%E8%AE%A4%E7%9F%A5%E4%B8%8E%E8%AE%BE%E8%AE%A1%E3%80%8B/</loc>
+    <lastmod>2016-12-13T08:09:42.987Z</lastmod>
+    <data>
+        <display>
+        <title>《认知与设计》</title>
+        <pubTime>2016-12-09T02:14:16.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/12/06/%E5%85%B3%E4%BA%8E%E5%A4%96%E6%96%87%E6%A3%80%E7%B4%A2/</loc>
     <lastmod>2016-12-12T01:06:39.114Z</lastmod>
     <data>
@@ -35,26 +55,6 @@
            
              
               <breadCrumb title="专题&amp;emsp;|&amp;emsp;&lt;i class=&quot;fa fa-thumb-tack &quot;&gt;&lt;/i&gt;" url="http://yoursite.com/categories/%E4%B8%93%E9%A2%98-emsp-emsp-i-class-fa-fa-thumb-tack-i/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/12/09/%E3%80%8A%E8%AE%A4%E7%9F%A5%E4%B8%8E%E8%AE%BE%E8%AE%A1%E3%80%8B/</loc>
-    <lastmod>2016-12-09T02:29:59.776Z</lastmod>
-    <data>
-        <display>
-        <title>《认知与设计》</title>
-        <pubTime>2016-12-09T02:14:16.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1/"/>
           
         </display>
     </data>
