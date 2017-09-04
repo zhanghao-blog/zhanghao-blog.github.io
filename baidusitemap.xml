@@ -4,6 +4,81 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/08/21/hello-world/</loc>
+    <lastmod>2017-09-04T01:35:07.355Z</lastmod>
+    <data>
+        <display>
+        <title>技术文档格式</title>
+        <pubTime>2016-08-21T04:15:40.832Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术栈" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/09/04/%E5%85%B3Sublime-Text-3-windows7%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E8%BF%90%E7%94%A8/</loc>
+    <lastmod>2017-09-04T01:31:17.065Z</lastmod>
+    <data>
+        <display>
+        <title>Sublime Text 3 windows7下的高效运用</title>
+        <pubTime>2017-09-04T01:12:56.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术栈" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/08/19/%E5%BB%BA%E7%AD%91%E5%AE%B6%E5%AE%89%E8%97%A4%E5%BF%A0%E9%9B%84%E7%9A%84%E8%87%B3%E4%B8%8A%E7%B2%BE%E7%A5%9E/</loc>
+    <lastmod>2017-08-24T03:08:17.613Z</lastmod>
+    <data>
+        <display>
+        <title>建筑家安藤忠雄的匠心精神</title>
+        <pubTime>2017-08-19T10:34:13.000Z</pubTime>
+        
+        <tag>哲思、读书小记</tag>
+         
+         
+           
+             
+              <breadCrumb title="人物传记、设计" url="http://yoursite.com/categories/%E4%BA%BA%E7%89%A9%E4%BC%A0%E8%AE%B0%E3%80%81%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/08/19/%E5%85%B3%E4%BA%8E%E9%9F%B3%E4%B9%90%E4%B8%8E%E5%88%9B%E4%BD%9C%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E5%90%89%E4%BB%96%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/</loc>
+    <lastmod>2017-08-19T11:22:04.485Z</lastmod>
+    <data>
+        <display>
+        <title>关于音乐与创作——我的吉他学习历程</title>
+        <pubTime>2017-08-19T11:03:58.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/07/01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/</loc>
     <lastmod>2017-08-06T03:28:50.908Z</lastmod>
     <data>
@@ -239,21 +314,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/08/21/hello-world/</loc>
-    <lastmod>2016-10-20T11:48:39.263Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2016-08-21T04:15:40.832Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/09/26/%E5%85%B3%E4%BA%8E%E6%94%80%E5%B2%A9%E5%81%87%E6%83%B3/</loc>
     <lastmod>2016-09-30T02:28:00.945Z</lastmod>
     <data>
@@ -376,24 +436,4 @@
     
     
     
-    
-  <url>
-    <loc>http://yoursite.com/2016/08/22/%E5%BC%A0%E6%B5%A9%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2016-08-26T12:20:16.459Z</lastmod>
-    <data>
-        <display>
-        <title>快速入门</title>
-        <pubTime>2016-08-22T07:40:25.000Z</pubTime>
-        
-        <tag>MarkDown</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术栈" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
 </urlset>
