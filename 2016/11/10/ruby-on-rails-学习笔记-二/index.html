@@ -1,0 +1,890 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://ocb1t53ct.bkt.clouddn.com/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Ruby 对 Windows 的支持不太好，主要是使用了 C/C++ 代码的 Gem 对 Windows 支持不好， 在 Windows 下安装这些 Gem 时，能在当前计算机上正确编译这些 C/C++ 代码是一件艰难的事。 所以在 Windows 下开发 Rails 是一件很折腾人的事。 但是如果工作环境限定了要使用 Windows，可以用虚拟机的方式。简单来说就是在 Windows 上安装 虚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ruby on rails 学习笔记(二)">
+<meta property="og:url" content="http://yoursite.com/2016/11/10/ruby-on-rails-学习笔记-二/index.html">
+<meta property="og:site_name" content="张浩's blog">
+<meta property="og:description" content="Ruby 对 Windows 的支持不太好，主要是使用了 C/C++ 代码的 Gem 对 Windows 支持不好， 在 Windows 下安装这些 Gem 时，能在当前计算机上正确编译这些 C/C++ 代码是一件艰难的事。 所以在 Windows 下开发 Rails 是一件很折腾人的事。 但是如果工作环境限定了要使用 Windows，可以用虚拟机的方式。简单来说就是在 Windows 上安装 虚">
+<meta property="og:image" content="http://od5wf0zmn.bkt.clouddn.com/virtualbox/5.png">
+<meta property="og:image" content="http://od5wf0zmn.bkt.clouddn.com/dengjizhao/rails/rails.png">
+<meta property="og:updated_time" content="2016-11-19T06:44:47.378Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ruby on rails 学习笔记(二)">
+<meta name="twitter:description" content="Ruby 对 Windows 的支持不太好，主要是使用了 C/C++ 代码的 Gem 对 Windows 支持不好， 在 Windows 下安装这些 Gem 时，能在当前计算机上正确编译这些 C/C++ 代码是一件艰难的事。 所以在 Windows 下开发 Rails 是一件很折腾人的事。 但是如果工作环境限定了要使用 Windows，可以用虚拟机的方式。简单来说就是在 Windows 上安装 虚">
+<meta name="twitter:image" content="http://od5wf0zmn.bkt.clouddn.com/virtualbox/5.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <title> ruby on rails 学习笔记(二) | 张浩's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1eb5b8a40defae74b45e871c3846ae5b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">张浩's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Geek的世界|极简主义</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+  
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+		   
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ruby on rails 学习笔记(二)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-10T18:18:17+08:00" content="2016-11-10">
+              2016-11-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术栈/" itemprop="url" rel="index">
+                    <span itemprop="name">技术栈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+		  
+          
+          
+             <span id="/2016/11/10/ruby-on-rails-学习笔记-二/" class="leancloud_visitors" data-flag-title="ruby on rails 学习笔记(二)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Ruby 对 Windows 的支持不太好，主要是使用了 C/C++ 代码的 Gem 对 Windows 支持不好， 在 Windows 下安装这些 Gem 时，能在当前计算机上正确编译这些 C/C++ 代码是一件艰难的事。 所以在 Windows 下开发 Rails 是一件很折腾人的事。 但是如果工作环境限定了要使用 Windows，可以用虚拟机的方式。简单来说就是在 Windows 上安装 虚拟机软件，在虚拟机安装 Linux，使用这个 Linux 来作为 Rails 的开发环境。 而 Vagrant 是让使用这个虚拟机环境更加方便的工具。</p>
+<a id="more"></a>
+<h1 id="在-Win7-下安装配置-Vagrant-作为-Rails-开发环境"><a href="#在-Win7-下安装配置-Vagrant-作为-Rails-开发环境" class="headerlink" title="在 Win7 下安装配置 Vagrant 作为 Rails 开发环境"></a>在 Win7 下安装配置 Vagrant 作为 Rails 开发环境</h1><p>以下对ruby on rails 环境搭建，基于windows7 64位操作系统，使用virtualbox下ubuntu虚拟机。</p>
+<h2 id="问题1-获取virtualbox-com-对象失败-Failed-to-instantiate-CLSID-VirtualBox"><a href="#问题1-获取virtualbox-com-对象失败-Failed-to-instantiate-CLSID-VirtualBox" class="headerlink" title="问题1-获取virtualbox com 对象失败 Failed to instantiate CLSID_VirtualBox"></a>问题1-获取virtualbox com 对象失败 Failed to instantiate CLSID_VirtualBox</h2><p>错误详情：VirtualBox无法打开，打开后提示创建COM对象失败；被召者 RC:E_NOINTERFACE (0x80004002)。SAQ后发现需要修改VirtualBox 属性里兼容性（除去win7）和权限（管理员权限），但是并没有作用，后来又查到在BIOS中修改CPU设置，打开Intel VT功能，保存并退出。发现以前装vmwarm时已经改了，不管怎样改了在之后保持，再打开又可以了，奇怪的机器语言！！！</p>
+<h2 id="问题2-VirtualBox兼容性"><a href="#问题2-VirtualBox兼容性" class="headerlink" title="问题2-VirtualBox兼容性"></a>问题2-VirtualBox兼容性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">C:\Users\Administrator&gt;e:</div><div class="line">E:\HashiCorp\Vagrant\work\rails&gt;vagrant init</div><div class="line">E:\HashiCorp\Vagrant\work\rails&gt;vagrant up</div><div class="line">Bringing machine &apos;default&apos; up with &apos;virtualbox&apos; provider...</div><div class="line">There was an error while executing `VBoxManage`, a CLI used by Vagrant</div><div class="line">for controlling VirtualBox. The command and stderr is shown below.</div><div class="line">Command: [&quot;list&quot;, &quot;hostonlyifs&quot;]</div><div class="line">Stderr: VBoxManage.exe: error: Failed to create the VirtualBox object!</div><div class="line">VBoxManage.exe: error: Failed to instantiate CLSID_VirtualBox w/ IVirtualBox, but CLSID_VirtualBox w/ IUnknown works.</div><div class="line">VBoxManage.exe: error: PSDispatch looks fine. Weird</div><div class="line">VBoxManage.exe: error: Details: code E_INVALIDARG (0x80070057), component VirtualBoxClientWrap, interface IVirtualBoxClient</div><div class="line">E:\HashiCorp\Vagrant\work\rails&gt;</div></pre></td></tr></table></figure>
+<p>在VirtualBox安装目录中找到VBoxManage.exe，右击选择属性，设置Windows Server 2008兼容模式运行。再执行vagrant up，正常运行</p>
+<h2 id="问题3-VBoxManage"><a href="#问题3-VBoxManage" class="headerlink" title="问题3-VBoxManage"></a>问题3-VBoxManage</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">E:\&gt;cd E:\HashiCorp\Vagrant\work\rails</div><div class="line"></div><div class="line">E:\HashiCorp\Vagrant\work\rails&gt;vagrant up</div><div class="line">Bringing machine &apos;default&apos; up with &apos;virtualbox&apos; provider...</div><div class="line">==&gt; default: Importing base box &apos;base&apos;...</div><div class="line">==&gt; default: Matching MAC address for NAT networking...</div><div class="line">==&gt; default: Setting the name of the VM: rails_default_1479003001297_34537</div><div class="line">==&gt; default: Clearing any previously set network interfaces...</div><div class="line">==&gt; default: Preparing network interfaces based on configuration...</div><div class="line">    default: Adapter 1: nat</div><div class="line">==&gt; default: Forwarding ports...</div><div class="line">    default: 80 (guest) =&gt; 8080 (host) (adapter 1)</div><div class="line">    default: 22 (guest) =&gt; 2222 (host) (adapter 1)</div><div class="line">==&gt; default: Running &apos;pre-boot&apos; VM customizations...</div><div class="line">==&gt; default: Booting VM...</div><div class="line">There was an error while executing `VBoxManage`, a CLI used by Vagrant</div><div class="line">for controlling VirtualBox. The command and stderr is shown below.</div><div class="line"></div><div class="line">Command: [&quot;startvm&quot;, &quot;ba7b2954-6c95-4cea-bca4-a67b7e70b2cb&quot;, &quot;--type&quot;, &quot;headless&quot;]</div><div class="line"></div><div class="line">Stderr: VBoxManage.exe: error: The virtual machine &apos;rails_default_1479003001297_34537&apos; has terminated unexpectedly during startup with exit code 1 (0x1).  More details may be a</div><div class="line">vailable in &apos;C:\Users\Administrator\VirtualBox VMs\rails_default_1479003001297_34537\Logs\VBoxHardening.log&apos;</div><div class="line">VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component MachineWrap, interface IMachine</div></pre></td></tr></table></figure>
+<p>查找问题发现只有英文讨论，也只好硬着头皮看</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/37955942/vagrant-up-vboxmanage-exe-error-vt-x-is-not-available-verr-vmx-no-vmx-code" target="_blank" rel="external">Vagrant up - VBoxManage.exe error: VT-x is not available (VERR_VMX_NO_VMX) code E_FAIL (0x80004005) gui headless</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">获取 VirtualBox COM 对象失败.</div><div class="line"></div><div class="line">应用程序将被中断.</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Failed to instantiate CLSID_VirtualBox w/ IVirtualBox, but CLSID_VirtualBox w/ IUnknown works.</div><div class="line"></div><div class="line">PSDispatch looks fine. Weird.</div><div class="line"></div><div class="line">返回 代码:E_INVALIDARG (0x80070057)</div><div class="line">组件:VirtualBoxClientWrap</div><div class="line">界面:IVirtualBoxClient &#123;d2937a8e-cb8d-4382-90ba-b7da78a74573&#125;</div></pre></td></tr></table></figure>
+<p>发现问题应该出在VirtualBox上，就查阅VirtualBox贴吧，发现win7-64同样的问题很多</p>
+<ul>
+<li><a href="http://tieba.baidu.com/p/3495196597#62900326376l" target="_blank" rel="external">win7安装最新版本4.3.20版本的VirtualBox，创建虚拟机启动报错</a></li>
+</ul>
+<blockquote>
+<p>用4.3.12版本就可以了。我win7 64位之前用的5.0.14，开始没问题过了几天后也报 rc=-104错误。<br>试过以下方法：<br>1、“如D:\Program Files\Oracle\VirtualBox\drivers\vboxdrv，<br>右击VBoxDrv.inf，选安装，然后重启。”<br>2、目录用默认的C盘<br>3、卸载重装<br>这3种方法都没用。<br>最后改成4.3.12版本后就ok了</p>
+</blockquote>
+<p><img src="http://od5wf0zmn.bkt.clouddn.com/virtualbox/5.png" alt=""></p>
+<p>改用VirtualBox4.3.12后问题解决，想了想终究归于兼容性问题吧</p>
+<h2 id="问题4-Ubuntu-源修改为网易源"><a href="#问题4-Ubuntu-源修改为网易源" class="headerlink" title="问题4- Ubuntu 源修改为网易源"></a>问题4- Ubuntu 源修改为网易源</h2><blockquote>
+<p>wget <a href="http://mirrors.163.com/.help/sources.list.trusty" target="_blank" rel="external">http://mirrors.163.com/.help/sources.list.trusty</a> 命令无效</p>
+</blockquote>
+<p>解决方法ubuntu : sudo apt-get install wget  安装wget命令应用</p>
+<h2 id="问题5-ssh-executable-not-found-in-any-directories-in-the-PATH"><a href="#问题5-ssh-executable-not-found-in-any-directories-in-the-PATH" class="headerlink" title="问题5-ssh executable not found in any directories in the %PATH%"></a>问题5-<code>ssh</code> executable not found in any directories in the %PATH%</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">c:\Users\dhawal.vora&gt;vagrant ssh</div><div class="line">`ssh` executable not found in any directories in the %PATH% variable. Is an</div><div class="line">SSH client installed? Try installing Cygwin, MinGW or Git, all of which</div><div class="line">contain an SSH client. Or use your favorite SSH client with the following</div><div class="line">authentication information shown below:</div><div class="line"></div><div class="line">Host: 127.0.0.1</div><div class="line">Port: 2222</div><div class="line">Username: vagrant</div><div class="line">Private key: c:/Users/dhawal.vora/.vagrant/machines/default/virtualbox/private_key</div></pre></td></tr></table></figure>
+<p>SSH 连接到虚拟机，Windows 用 Putty 去连接<br>参考<a href="http://blog.csdn.net/fsw0723/article/details/18912957" target="_blank" rel="external">windows下使用ssh挫折记录</a><br>尝试开启控制面板\用户帐户和家庭安全\用户帐户\管理帐户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh_exchange_identification: read: Connection reset by peer</div></pre></td></tr></table></figure></p>
+<p>重启然后<code>vagrant up</code>后出现以下问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Timed out while waiting for the machine to boot. This means that</div><div class="line">Vagrant was unable to communicate with the guest machine within</div><div class="line">the configured (&quot;config.vm.boot_timeout&quot; value) time period.</div></pre></td></tr></table></figure></p>
+<p>解决方法有两种说法一种是修改configfile里 <code>vb.gui = true</code>，另一种勾选virtualbox管理器/设置/网络/接入网线。之后重启问题解决<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">E:\HashiCorp\Vagrant\work\rails&gt;vagrant ssh</div><div class="line">Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.13.0-24-generic x86_64)</div><div class="line"></div><div class="line"> * Documentation:  https://help.ubuntu.com/</div><div class="line">Last login: Mon Nov 14 13:03:39 2016</div><div class="line">vagrant@vagrant-ubuntu-trusty:~$</div></pre></td></tr></table></figure></p>
+<h2 id="问题6-localhost-8080打不开"><a href="#问题6-localhost-8080打不开" class="headerlink" title="问题6-localhost:8080打不开"></a>问题6-localhost:8080打不开</h2><p>打不开的原因自我分析出在rails server上，同时发现问题出在环境搭建上，同时也可能是映射问题，所以准备从头开始一步一步，慢工出细活，也是更好的学习环境搭配。</p>
+<h1 id="从头开始"><a href="#从头开始" class="headerlink" title="从头开始"></a>从头开始</h1><h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><blockquote>
+<p><code>VirtualBox-4.3.12-93733-Win</code>，<code>ubuntu 14.04 X64</code> ，<code>agrant_1.8.7</code>，<code>github</code></p>
+</blockquote>
+<p>VirtualBox选择4.3.12版本因为在window版本下表现更为稳定，而虚拟机模板镜像box选取的是纯净版的ubuntu，原由在于<strong>自带的很多内容已经过时，还是得自己装，而且有一些预先的设置并没有写清楚，造成查找问题比较耗时间</strong>，ubuntu 14.04 X64取自<em>在 Win7 下安装配置 Vagrant 作为 Rails 开发环境</em>。</p>
+<h2 id="环境变量-path"><a href="#环境变量-path" class="headerlink" title="环境变量 path"></a>环境变量 path</h2><p>同样的，也要将virtualBox的目录路径（类似于C:\Program Files\Oracle\VirtualBox）添加到环境变量path中<br>提醒一下，如果忘了添加路径到path，在后面步骤中出现问题，再来添加路径后，一定要重新打开命令端，让命令端重新载入环境变量才能生效。</p>
+<h2 id="添加一个虚拟机模板"><a href="#添加一个虚拟机模板" class="headerlink" title="添加一个虚拟机模板"></a>添加一个虚拟机模板</h2><h2 id="初始化虚拟机"><a href="#初始化虚拟机" class="headerlink" title="初始化虚拟机"></a>初始化虚拟机</h2><p>先选定一个虚拟机目录，在这个目录中，会存放这个虚拟机的 Vagrant 配置文件， 后面启动虚拟机时，需要先切换到这个下来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd E:\HashiCorp\Vagrant\work\rails</div><div class="line">vagrant init</div><div class="line">vagrant up</div></pre></td></tr></table></figure>
+<h2 id="ruby-on-rails安装必要的软件及包"><a href="#ruby-on-rails安装必要的软件及包" class="headerlink" title="ruby on rails安装必要的软件及包"></a>ruby on rails安装必要的软件及包</h2><h3 id="安装curl-sudo-apt-get-install-curl"><a href="#安装curl-sudo-apt-get-install-curl" class="headerlink" title="安装curl-sudo apt-get install curl"></a>安装curl-<code>sudo apt-get install curl</code></h3><h3 id="安装rvm-需要到官网复制两条命令行如下："><a href="#安装rvm-需要到官网复制两条命令行如下：" class="headerlink" title="安装rvm-需要到官网复制两条命令行如下："></a>安装rvm-需要到官网复制两条命令行如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</div><div class="line">\curl -sSL https://get.rvm.io | bash -s stable</div></pre></td></tr></table></figure>
+<blockquote>
+<p>更改rvm源服务器资源信息，毕竟国外的经常被墙掉，还有就是国内的速度快。若不设置，下面可能出现各种问题，如出现服务器积极拒绝（被墙），或者下载速度慢<br>$ sed -i -e ‘s/ftp.ruby-lang.org\/pub\/ruby/ruby.taobao.org\/mirrors\/ruby/g’ ~/.rvm/config/db</p>
+</blockquote>
+<h3 id="安装ruby-rvm-install-2-2-0"><a href="#安装ruby-rvm-install-2-2-0" class="headerlink" title="安装ruby-rvm install 2.2.0"></a>安装ruby-<code>rvm install 2.2.0</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev</div></pre></td></tr></table></figure>
+<h3 id="安装ruby-rvm-install-ruby"><a href="#安装ruby-rvm-install-ruby" class="headerlink" title="安装ruby-rvm install ruby"></a>安装ruby-<code>rvm install ruby</code></h3><h3 id="切换到淘宝服务器-gem"><a href="#切换到淘宝服务器-gem" class="headerlink" title="切换到淘宝服务器 gem"></a>切换到淘宝服务器 gem</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gem source</div><div class="line">gem source -r https://rubygems.org/</div><div class="line">//添加淘宝源，</div><div class="line">gem source -a https://ruby.taobao.org</div></pre></td></tr></table></figure>
+<h3 id="使用gem安装rails-gem-install-rails"><a href="#使用gem安装rails-gem-install-rails" class="headerlink" title="使用gem安装rails-gem install rails"></a>使用gem安装rails-<code>gem install rails</code></h3><h2 id="创建rails工程"><a href="#创建rails工程" class="headerlink" title="创建rails工程"></a>创建rails工程</h2><blockquote>
+<p>rails new blog –skip-bundle<br>cd blog<br>bundle install</p>
+</blockquote>
+<h3 id="安装js编译器"><a href="#安装js编译器" class="headerlink" title="安装js编译器"></a>安装js编译器</h3><blockquote>
+<p>sudo apt-get install python-software-properties<br>sudo add-apt-repository ppa:chris-lea/node.js<br>sudo apt-get update<br>sudo apt-get install nodejs<br>若不安装，本机有没有js编译器，直接执行rails server，则会报错：<br>ubuntu:~/app/rails/blog$ rails server<br>//Could not find a JavaScript runtime</p>
+</blockquote>
+<h3 id="启动server-rails-server"><a href="#启动server-rails-server" class="headerlink" title="启动server-rails server"></a>启动server-<code>rails server</code></h3><blockquote>
+<p>vagrant@vagrant-ubuntu-trusty:~/app/rails/blog$ rails server<br>=&gt; Booting Puma<br>=&gt; Rails 5.0.0.1 application starting in development on <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a><br>=&gt; Run <code>rails server -h</code> for more startup options<br>Puma starting in single mode…</p>
+<ul>
+<li>Version 3.6.0 (ruby 2.3.2-p217), codename: Sleepy Sunday Serenity</li>
+<li>Min threads: 5, max threads: 5</li>
+<li>Environment: development</li>
+<li>Listening on tcp://localhost:3000<br>Use Ctrl-C to stop</li>
+</ul>
+</blockquote>
+<h3 id="编辑-Vagrantfile-文件"><a href="#编辑-Vagrantfile-文件" class="headerlink" title="编辑 Vagrantfile 文件"></a>编辑 Vagrantfile 文件</h3><p>一般情况下，进行开发时，源代码保存在宿主机中，方便地使用 IDE 等工具， 虚拟机环境一般只用来运行代码，所以这里就需要使用目录映射功能，将本地的目录映射到虚拟机的对应目录。</p>
+<blockquote>
+<p><code>config.vm.provider &quot;virtualbox&quot; do |vb|</code><br>Display the VirtualBox GUI when booting the machine<br><code>vb.gui = true</code><br><code>vb.cpus = 2</code> Customize the amount of cpu on the VM:<br>Customize the amount of memory on the VM:<br><code>vb.memory = &quot;1024&quot;</code><br>end<br><code>config.vm.network &quot;forwarded_port&quot;, guest: 3000, host: 3000</code> </p>
+</blockquote>
+<h3 id="不能设置共享文件夹的问题的解决"><a href="#不能设置共享文件夹的问题的解决" class="headerlink" title="不能设置共享文件夹的问题的解决"></a>不能设置共享文件夹的问题的解决</h3><p>在宿主机中运行 VirtualBox.exe，在 VirtualBox 管理器中看到正在运行的虚拟机。 给这个虚拟机设置虚拟光盘为 VBoxGuestAdditions.iso 文件。VBoxGuestAdditions.iso 文件 在 VirtualBox 的安装目录下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo mount /dev/cdrom /media/cdrom</div><div class="line">cd /media/cdrom</div><div class="line">sudo ./VBoxLinuxAdditions.run # 安装</div><div class="line">sudo umount /media/cdrom</div><div class="line">sudo eject /dev/cdrom</div></pre></td></tr></table></figure>
+<p>mount 需要root权限，root 密码修改<code>sudo passwd</code>，最后重启vagrant reload</p>
+<h3 id="iptables防火墙规则"><a href="#iptables防火墙规则" class="headerlink" title="iptables防火墙规则"></a>iptables防火墙规则</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo iptables -I INPUT -p tcp --dport 3000 -j ACCEPT</div><div class="line">sudo iptables -I OUTPUT -p tcp --sport 3000 -j ACCEPT</div><div class="line">iptables-save</div></pre></td></tr></table></figure>
+<p>虚拟机根目录下</p>
+<h3 id="localhost-3000"><a href="#localhost-3000" class="headerlink" title="localhost:3000"></a>localhost:3000</h3><p>打开时一直有问题，后来发现要<code>rails server -b 0.0.0.0</code>方式启动服务</p>
+<p>原因：Port 3000 in the host computer is forwarded to port 3000 in the virtual machine. Thus, applications running in the virtual machine can be accessed via localhost:3000 in the host computer. Be sure the web server is bound to the IP 0.0.0.0, instead of 127.0.0.1, so it can access all interfaces:</p>
+<p><img src="http://od5wf0zmn.bkt.clouddn.com/dengjizhao/rails/rails.png" alt=""></p>
+<blockquote>
+<p>vagrant up，启动<br>vagrant halt，停止<br>vagrant suspend，暂时挂起，将虚拟机的状态保存在磁盘上，可以用 vagrant up 或 vagrant resume，重新启动起来，会比停止之后再启动速度快。<br>vagrant status，查看虚拟机状态<br>vagrant destroy，销毁虚拟机，一切都没有了，除了虚拟机模板，小心使用<br>vagrant package，打包当前虚拟机为 box<br>在虚拟机中使用 sudo reboot 重启，目录映射不起作用，使用 vagrant reload 才行</p>
+</blockquote>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://github.com/rails/rails-dev-box#how-to-build-the-virtual-machine" target="_blank" rel="external">A Virtual Machine for Ruby on Rails Core Development</a></li>
+<li><a href="https://www.douban.com/note/539589089/" target="_blank" rel="external">windows7+virtualbox+ubuntu 虚拟机上安装rails</a></li>
+<li><strong><a href="http://www.cnblogs.com/piaolingzxh/p/4217480.html" target="_blank" rel="external">ubuntu 14.04中安装 ruby on rails 环境（填坑版） 呕血推荐</a></strong></li>
+<li><a href="http://blog.csdn.net/beslow/article/details/25469207" target="_blank" rel="external">用VirtualBox和vagrant在win7×64上搭建ruby on rails 开发环境</a></li>
+<li><a href="http://0000-bigtree.github.io/blog/2015/08/13/config-vagrant-on-win7.html" target="_blank" rel="external">在 Win7 下安装配置 Vagrant 作为 Rails 开发环境</a></li>
+<li><strong><a href="https://www.rails365.net/articles/shi-yong-vagrant-kuai-su-da-jian-rails-kai-fa-huan-jing" target="_blank" rel="external">使用vagrant快速搭建rails开发环境</a></strong></li>
+<li><a href="https://segmentfault.com/a/1190000002645737?utm_source=Weibo&amp;utm_medium=shareLink&amp;utm_campaign=socialShare" target="_blank" rel="external">在 Mac/win7 下上使用 Vagrant 打造本地开发环境</a></li>
+<li><a href="http://ninghao.net/blog/2079" target="_blank" rel="external">路径（九）：用 Vagrantfile 配置虚拟机 — 网络</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ocb1t53ct.bkt.clouddn.com/weixin.jpg" alt="zhanghao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ocb1t53ct.bkt.clouddn.com/zhifume.png" alt="zhanghao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag">#笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/29/ruby-on-rails-学习笔记-一/" rel="next" title="ruby on rails 学习笔记(一)">
+                <i class="fa fa-chevron-left"></i> ruby on rails 学习笔记(一)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/18/rails-入门练手篇/" rel="prev" title="rails 入门练手篇">
+                rails 入门练手篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ocb1t53ct.bkt.clouddn.com/avatar.jpg"
+               alt="zhanghao" />
+          <p class="site-author-name" itemprop="name">zhanghao</p>
+          <p class="site-description motion-element" itemprop="description">美好因无视美好的逝去</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在-Win7-下安装配置-Vagrant-作为-Rails-开发环境"><span class="nav-text">在 Win7 下安装配置 Vagrant 作为 Rails 开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题1-获取virtualbox-com-对象失败-Failed-to-instantiate-CLSID-VirtualBox"><span class="nav-text">问题1-获取virtualbox com 对象失败 Failed to instantiate CLSID_VirtualBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题2-VirtualBox兼容性"><span class="nav-text">问题2-VirtualBox兼容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题3-VBoxManage"><span class="nav-text">问题3-VBoxManage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题4-Ubuntu-源修改为网易源"><span class="nav-text">问题4- Ubuntu 源修改为网易源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题5-ssh-executable-not-found-in-any-directories-in-the-PATH"><span class="nav-text">问题5-ssh executable not found in any directories in the %PATH%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题6-localhost-8080打不开"><span class="nav-text">问题6-localhost:8080打不开</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#从头开始"><span class="nav-text">从头开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件准备"><span class="nav-text">软件准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量-path"><span class="nav-text">环境变量 path</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加一个虚拟机模板"><span class="nav-text">添加一个虚拟机模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化虚拟机"><span class="nav-text">初始化虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ruby-on-rails安装必要的软件及包"><span class="nav-text">ruby on rails安装必要的软件及包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装curl-sudo-apt-get-install-curl"><span class="nav-text">安装curl-sudo apt-get install curl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装rvm-需要到官网复制两条命令行如下："><span class="nav-text">安装rvm-需要到官网复制两条命令行如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ruby-rvm-install-2-2-0"><span class="nav-text">安装ruby-rvm install 2.2.0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ruby-rvm-install-ruby"><span class="nav-text">安装ruby-rvm install ruby</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到淘宝服务器-gem"><span class="nav-text">切换到淘宝服务器 gem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用gem安装rails-gem-install-rails"><span class="nav-text">使用gem安装rails-gem install rails</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建rails工程"><span class="nav-text">创建rails工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装js编译器"><span class="nav-text">安装js编译器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动server-rails-server"><span class="nav-text">启动server-rails server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑-Vagrantfile-文件"><span class="nav-text">编辑 Vagrantfile 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不能设置共享文件夹的问题的解决"><span class="nav-text">不能设置共享文件夹的问题的解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iptables防火墙规则"><span class="nav-text">iptables防火墙规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localhost-3000"><span class="nav-text">localhost:3000</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+ <!--<span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span> -->
+  <span class="author" itemprop="copyrightHolder">zhanghao</span>
+</div>
+
+ <!--<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>-->
+<span id="busuanzi_container_site_uv">
+  访客数<span id="busuanzi_value_site_uv"></span>人次  &nbsp; |
+</span>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+<span id="busuanzi_container_site_pv">
+   | &nbsp; 总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+
+
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhanghaoblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("k08uIJufadJ4rlauEPtCl0yr-gzGzoHsz", "KjvOvIfX23QGsT77WwqhSw4R");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>

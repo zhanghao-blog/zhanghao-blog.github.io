@@ -1,0 +1,869 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://ocb1t53ct.bkt.clouddn.com/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="浅谈一下，为什么选择学习ruby on rails，首先任何一门汇编语言的学习都有一定坡度，需要花费一定时间，很多时候更像风投，如果不能看清发展趋势，很容易被时代淘汰。所以当我决定学习ruby，学习ruby on rails框架时，我是经过考量的，理由其一是ruby on rails 是全栈的高效的，对高速发展是现今而言，动态语言ruby使人可以更高效的开发；其二是学习ruby on rails">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ruby on rails 学习笔记(一)">
+<meta property="og:url" content="http://yoursite.com/2016/10/29/ruby-on-rails-学习笔记-一/index.html">
+<meta property="og:site_name" content="张浩's blog">
+<meta property="og:description" content="浅谈一下，为什么选择学习ruby on rails，首先任何一门汇编语言的学习都有一定坡度，需要花费一定时间，很多时候更像风投，如果不能看清发展趋势，很容易被时代淘汰。所以当我决定学习ruby，学习ruby on rails框架时，我是经过考量的，理由其一是ruby on rails 是全栈的高效的，对高速发展是现今而言，动态语言ruby使人可以更高效的开发；其二是学习ruby on rails">
+<meta property="og:image" content="http://ocb1t53ct.bkt.clouddn.com/ruby/intro-mvc-diagram.jpg">
+<meta property="og:updated_time" content="2016-10-29T09:01:09.627Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ruby on rails 学习笔记(一)">
+<meta name="twitter:description" content="浅谈一下，为什么选择学习ruby on rails，首先任何一门汇编语言的学习都有一定坡度，需要花费一定时间，很多时候更像风投，如果不能看清发展趋势，很容易被时代淘汰。所以当我决定学习ruby，学习ruby on rails框架时，我是经过考量的，理由其一是ruby on rails 是全栈的高效的，对高速发展是现今而言，动态语言ruby使人可以更高效的开发；其二是学习ruby on rails">
+<meta name="twitter:image" content="http://ocb1t53ct.bkt.clouddn.com/ruby/intro-mvc-diagram.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <title> ruby on rails 学习笔记(一) | 张浩's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1eb5b8a40defae74b45e871c3846ae5b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">张浩's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Geek的世界|极简主义</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+  
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+		   
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ruby on rails 学习笔记(一)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-29T10:36:28+08:00" content="2016-10-29">
+              2016-10-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术栈/" itemprop="url" rel="index">
+                    <span itemprop="name">技术栈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+		  
+          
+          
+             <span id="/2016/10/29/ruby-on-rails-学习笔记-一/" class="leancloud_visitors" data-flag-title="ruby on rails 学习笔记(一)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>浅谈一下，为什么选择学习ruby on rails，首先任何一门汇编语言的学习都有一定坡度，需要花费一定时间，很多时候更像风投，如果不能看清发展趋势，很容易被时代淘汰。所以当我决定学习ruby，学习ruby on rails框架时，我是经过考量的，理由其一是ruby on rails 是全栈的高效的，对高速发展是现今而言，动态语言ruby使人可以更高效的开发；其二是学习ruby on rails 开发语言的哲学，rails是日本人开发的一款框架，一方面我对日式哲学有一定趣味，另一方面补全我对框架认识；其三是高效快速开发，初入社会才知道“天下武功为快不攻”是硬道理。<br><a id="more"></a></p>
+<h2 id="Ruby-on-Rails简介"><a href="#Ruby-on-Rails简介" class="headerlink" title="Ruby on Rails简介"></a>Ruby on Rails简介</h2><blockquote>
+<p>“Life’s too short to build something nobody wants” - Ash Maurya, Running Lean </p>
+</blockquote>
+<h3 id="什么是网站开发框架-Web-framework"><a href="#什么是网站开发框架-Web-framework" class="headerlink" title="什么是网站开发框架(Web framework)"></a>什么是网站开发框架(Web framework)</h3><p>近年来随着Web 2.0和云端风潮带来越来越多的Web应用程式开发需求，网站软件的规模开始增加，需要加入更多的商业逻辑和功能，这样的开发方式，导致了整个专案的结构变得十分混杂，不利于团队合作开发。要接手维护这样的网站，常常会不知道如何阅读及修改起，因为所有的商务逻辑与HTML混杂在一起，不同人开发就有不同的程式架构，缺乏程式文件是常有的事情，也不容易进行测试。</p>
+<p><strong>于是我们有了Web开发框架的需求，引入完整的物件导向观念和技术。而所谓的框架就是制定好了一套规范和惯例，让开发者在该架构下来进行开发。</strong></p>
+<blockquote>
+<p>维基百科是这样定义的：「软件框架(Software framework)」是为了实现某个业界标准或完成特定基本任务的软件组件规范，也指为了实现某个软件组件规范时，提供规范所要求之基础功能的软件产品。框架的功能类似于基础设施，与具体的软件应用无关，但是提供并实现最为基础的软件架构和体系。软件开发者通常依据特定的框架实现更为复杂的商业运用和业务逻辑。这样的软件应用可以在支持同一种框架的软件系统中运行。</p>
+</blockquote>
+<h3 id="MVC的软件架构设计模式"><a href="#MVC的软件架构设计模式" class="headerlink" title="MVC的软件架构设计模式"></a>MVC的软件架构设计模式</h3><blockquote>
+<ul>
+<li>Model物件包装了资料与商业逻辑，例如操作数据库</li>
+<li>View表示使用者接口，显示及编辑表单，可内嵌Ruby程式的HTML</li>
+<li>Controller负责将资料送进送出Model，处理从外界(也就是浏览器)来的HTTP Request请求，与Model互动后输出View(也就是HTML)</li>
+</ul>
+</blockquote>
+<p><img src="http://ocb1t53ct.bkt.clouddn.com/ruby/intro-mvc-diagram.jpg" alt=""></p>
+<h4 id="Web框架通常包括以下功能"><a href="#Web框架通常包括以下功能" class="headerlink" title="Web框架通常包括以下功能"></a>Web框架通常包括以下功能</h4><h5 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h5><p>ORM(Object-relational mapping)可以用物件导向语法来操作关联式数据库，容易使用、撰码十分有效率，不需要撰写繁琐的SQL语法，也增加了程式码维护性。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM orders, users WHERE orders.user_id = users.id AND orders.status = &quot;Paid&quot; LIMIT 5 ORDER BY orders.created_at;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Order.where(:status =&gt; &quot;paid&quot;).includes(:user).limit(5).order(&quot;created_at&quot;)</div></pre></td></tr></table></figure>
+<h5 id="URL路由"><a href="#URL路由" class="headerlink" title="URL路由"></a>URL路由</h5><p>不同于PHP直接使用档案目录结构来对应网址，例如网址是/foo/bar，就得有个档案在/foo/bar.php下。这种一对一的方式虽然直觉，但是却大大限制了程式架构和开发，网址也常常不漂亮，不利于SEO(Search engine optimization)。</p>
+<p>使用Web框架则没有这种问题，你拥有最大的弹性，您可以指定任意URL对应到任一个Controller的动作，跟档案位置是无关的。</p>
+<h3 id="Rails的哲学包括以下指导原则："><a href="#Rails的哲学包括以下指导原则：" class="headerlink" title="Rails的哲学包括以下指导原则："></a>Rails的哲学包括以下指导原则：</h3><blockquote>
+<ul>
+<li><strong>不要重复自己(DRY: Don’t Repeat Yourself) – 撰写出重复的程式码是件坏事</strong></li>
+<li><strong>惯例胜于设定(Convention Over Configuration) – Rails会默认各种好的设定跟惯例，而不是要求你设定每一个细节到设定档中。</strong></li>
+<li><strong>REST是网站应用程式的最佳模式 – 使用Resources和标准的HTTP verbs(动词)来组织你的应用程式是最快的方式(我们会在路径一章详细介绍这个强大的设计)</strong></li>
+</ul>
+</blockquote>
+<h3 id="Rails-不是什么"><a href="#Rails-不是什么" class="headerlink" title="Rails 不是什么"></a>Rails 不是什么</h3><p>如上所述，Rails是一个打造网站应用程式的开发框架，如果你只需要静态的HTML，那是绝不需要用到Rails的。</p>
+<p>Rails不是CMS(Content Management System)内容管理系统。CMS是一套写好的架站系统，可以让你不需要写程式就可以架站。市面上流行成熟的CMS系统多为PHP写成，例如Drupal、WordPress等。当然也有用Ruby写的，例如Radiant。如果这些架站系统刚好符合你的需求，那就不一定需要Rails。</p>
+<p>Rails是一套网站开发框架帮助你建立网站应用程式，它不是程式语言。</p>
+<h3 id="什么是Ruby？"><a href="#什么是Ruby？" class="headerlink" title="什么是Ruby？"></a>什么是Ruby？</h3><p>Ruby是一套开放原码、物件导向的动态直译式(interpreted)程式语言，它有着简单哲学、高生产力、精巧、自然的语法。他的创造者是来自日本的松本行弘(又名Matz)，设计的灵感来自于Lisp、Perl和Smalltalk，设计的目的是要让程式设计师能够快乐地写程式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">str = &quot;May Ruby be with you!&quot;</div><div class="line">5.times &#123; puts str &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>动态分型(typing)，不需要宣告型态<br>每样东西都是物件，包括数字<br>使用Code Block形式的匿名函式(anonymous function)随处可见</p>
+</blockquote>
+<h3 id="动态语言的好处"><a href="#动态语言的好处" class="headerlink" title="动态语言的好处"></a>动态语言的好处</h3><blockquote>
+<p>静态语言和动态语言的差别在于，前者的变量型别需要事前宣告，后者则是执行期才动态决定。实务上，就看程式需不需要事前编译这个动作了。</p>
+</blockquote>
+<p>使用更高阶的动态脚本语言可以帮助我们：</p>
+<blockquote>
+<p><strong>1 用更少程式码做更多事情，大大增加生产力</strong><br><strong>2 更快因应客户开发需求，敏捷开发</strong></p>
+</blockquote>
+<p>不过，动态语言也不是没有缺点：</p>
+<blockquote>
+<p><strong>1 执行效能是绝对比不上静态语言的</strong><br><strong>2 没有编译期可以检查型别错误</strong></p>
+</blockquote>
+<p>没有编译期可以检查型别错误的问题，也随着单元测试和TDD(Test-driven development)测试驱动开发等敏捷最佳实务而逐渐降低重要性。而大部分的Bug会出自于商业逻辑错误，而不是型别错误上。</p>
+<p>但是我们知道现在的电脑越来越快、越来越便宜、上网越来越容易、内存越来越多、硬盘越来越大。另外，行动装置也越来越多，需要搭配的网络服务需求也增加了。这些趋势告诉我们有更多的软件的需求，另一方面由于硬件效能的增强，人力开发成本比起软件的执行期的效能，也越来越重要。同样一个程式，用动态语言执行的效能已经可以达到实用(例如每秒可以处理50~500个的HTTP请求，也可以透过增加服务器来扩展架构)，也许用静态语言后的执行速度可以再快一倍，但是却需要十倍以上的时间来开发，这件事情是不是值得呢？</p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>物件导向是台湾方面用语，而在大陆意为面向对象</p>
+<p>URL（Uniform Resoure Locator：统一资源定位器）是WWW页的地址，它从左到右由下述部分组成：</p>
+<ul>
+<li><p>Internet资源类型（scheme）：指出WWW客户程序用来操作的工具。如“http：//”表示WWW服务器，“ftp：//”表示FTP服务器，“gopher：//”表示Gopher服务器，而“new：”表示Newgroup新闻组。</p>
+</li>
+<li><p>服务器地址（host）：指出WWW页所在的服务器域名。</p>
+</li>
+<li><p>端口（port）：有时（并非总是这样），对某些资源的访问来说，需给出相应的服务器提供端口号。</p>
+</li>
+<li><p>路径（path）：指明服务器上某资源的位置（其格式与DOS系统中的格式一样，通常有目录/子目录/文件名这样结构组成）。与端口一样，路径并非总是需要的。</p>
+</li>
+</ul>
+<p>URL地址格式排列为：scheme：//host：port/path，例如http：//www.sohu.com/domain/HXWZ就是一个典型的URL地址。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ocb1t53ct.bkt.clouddn.com/weixin.jpg" alt="zhanghao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ocb1t53ct.bkt.clouddn.com/zhifume.png" alt="zhanghao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag">#笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/21/内容分享专题/" rel="next" title="内容分享专题">
+                <i class="fa fa-chevron-left"></i> 内容分享专题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/10/ruby-on-rails-学习笔记-二/" rel="prev" title="ruby on rails 学习笔记(二)">
+                ruby on rails 学习笔记(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ocb1t53ct.bkt.clouddn.com/avatar.jpg"
+               alt="zhanghao" />
+          <p class="site-author-name" itemprop="name">zhanghao</p>
+          <p class="site-description motion-element" itemprop="description">美好因无视美好的逝去</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ruby-on-Rails简介"><span class="nav-text">Ruby on Rails简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是网站开发框架-Web-framework"><span class="nav-text">什么是网站开发框架(Web framework)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC的软件架构设计模式"><span class="nav-text">MVC的软件架构设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Web框架通常包括以下功能"><span class="nav-text">Web框架通常包括以下功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ORM"><span class="nav-text">ORM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#URL路由"><span class="nav-text">URL路由</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rails的哲学包括以下指导原则："><span class="nav-text">Rails的哲学包括以下指导原则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rails-不是什么"><span class="nav-text">Rails 不是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Ruby？"><span class="nav-text">什么是Ruby？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态语言的好处"><span class="nav-text">动态语言的好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#备注"><span class="nav-text">备注</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+ <!--<span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span> -->
+  <span class="author" itemprop="copyrightHolder">zhanghao</span>
+</div>
+
+ <!--<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>-->
+<span id="busuanzi_container_site_uv">
+  访客数<span id="busuanzi_value_site_uv"></span>人次  &nbsp; |
+</span>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+<span id="busuanzi_container_site_pv">
+   | &nbsp; 总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+
+
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhanghaoblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("k08uIJufadJ4rlauEPtCl0yr-gzGzoHsz", "KjvOvIfX23QGsT77WwqhSw4R");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
