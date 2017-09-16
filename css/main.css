@@ -1664,7 +1664,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8e86ff;
+  background: #595e88;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2647,9 +2647,9 @@ body {
 }
 #idhyt-surprise-ball-animation {
   width: 320px;
-  position: absolute;
-  top: -60px;
-  left: 20%;
+  position: relative;
+  top: -120px;
+  left: -160px;
   margin: 0 auto;
 }
 @media (max-width: 767px) {
